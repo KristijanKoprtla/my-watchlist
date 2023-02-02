@@ -1,0 +1,14 @@
+.navItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+    gap: 20px;
+    font-size: 3rem;
+    
+}
+
+.navItems li {
+    text-decoration: none;
+    list-style-type: none;
+}
