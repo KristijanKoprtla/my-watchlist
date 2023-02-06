@@ -1,3 +1,4 @@
+import propTypes from 'prop-types'; 
 function Movie({title, image}) {
 
     return(
@@ -11,3 +12,8 @@ function Movie({title, image}) {
 
 
 export default Movie;
+
+Movie.propTypes = {
+    imgage: propTypes.string,
+    title: propTypes.string
+}

@@ -1,3 +1,6 @@
+import propTypes from 'prop-types'; 
+
+
 const Student = (props) => {
     return (
         <>
@@ -10,3 +13,9 @@ const Student = (props) => {
 }
 
 export default Student;
+
+Student.propTypes = {
+    fullName: propTypes.string,
+    average: propTypes.number,
+    passed: propTypes.arrayOf(propTypes.string)
+}
