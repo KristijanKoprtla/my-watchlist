@@ -8,6 +8,7 @@ const Student = (props) => {
             <div>Prosjek: {props.average}</div>
             <div>Polazni kolegiji: {props.passed.join(', ')} </div>
             <div>JMBAG: {props.jmbag}</div>
+            <button onClick={() => props.introducePerson(`${props.fullName}`)}>Introduce person</button>
         </>
     )
 }
