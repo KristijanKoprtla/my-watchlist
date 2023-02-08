@@ -7,6 +7,7 @@ import ClassSample from "./ClassSample";
 import Person from "./Person";
 import Student from "./Student";
 import Events from "./Events";
+import ReactStates from "./ReactStates";
 
 function Playground() {
   const students = [
@@ -36,6 +37,8 @@ function Playground() {
 
   return (
     <>
+      <ReactStates />
+
       <Events />
 
       {students.map((student) => {
