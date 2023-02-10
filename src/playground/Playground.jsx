@@ -36,7 +36,10 @@ function Playground() {
   }
 
   return (
+    
     <>
+      
+
       <ReactStates />
 
       <Events />
@@ -70,13 +73,15 @@ function Playground() {
         parties={["HNS", "HSLS", "HSS"]}
       />
 
-      <Movie title="Batman" image={batman} />
+      {/* <Movie title="Batman" image={batman} />
       <Movie title="Spiderman" image={spiderman} />
 
-      <Movie title="superman" image={superman} />
-
+      <Movie title="superman" image={superman} /> */}
+      <Movie />
       <UserImage />
       <ClassSample />
+
+      
     </>
   );
 }
