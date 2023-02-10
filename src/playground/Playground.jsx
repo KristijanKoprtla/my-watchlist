@@ -8,6 +8,9 @@ import Person from "./Person";
 import Student from "./Student";
 import Events from "./Events";
 import ReactStates from "./ReactStates";
+import ClanskaIskaznica from "./ClanskaIskaznica";
+import Acordion from "./Acordion";
+import MovieSearch from "./MovieSearch";
 
 function Playground() {
   const students = [
@@ -32,13 +35,17 @@ function Playground() {
   ];
 
   const introduction = (fullNameString) => {
-    alert('Mein Name ist ' + fullNameString)
-  }
+    alert("Mein Name ist " + fullNameString);
+  };
 
   return (
-    
     <>
-      
+      <MovieSearch />
+      <h1>Accordions</h1>
+      <Acordion />
+      <Acordion />
+
+      <ClanskaIskaznica />
 
       <ReactStates />
 
@@ -46,16 +53,16 @@ function Playground() {
 
       {students.map((student) => {
         return (
-            <div key={student.jmbag}>
-                <Student
-                    fullName={student.fullName}
-                    average={student.average}
-                    passed={student.passed}
-                    jmbag={student.jmbag}
-                    introducePerson={introduction}
-                />
-            </div>
-        )
+          <div key={student.jmbag}>
+            <Student
+              fullName={student.fullName}
+              average={student.average}
+              passed={student.passed}
+              jmbag={student.jmbag}
+              introducePerson={introduction}
+            />
+          </div>
+        );
       })}
       <Person
         name="Franc"
@@ -80,8 +87,6 @@ function Playground() {
       <Movie />
       <UserImage />
       <ClassSample />
-
-      
     </>
   );
 }
