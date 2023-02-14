@@ -11,6 +11,7 @@ import ReactStates from "./ReactStates";
 import ClanskaIskaznica from "./ClanskaIskaznica";
 import Acordion from "./Acordion";
 import MovieSearch from "./MovieSearch";
+import MovieGallery from "./MovieGallery";
 
 function Playground() {
   const students = [
@@ -40,6 +41,7 @@ function Playground() {
 
   return (
     <>
+      <MovieGallery />
       <MovieSearch />
       <h1>Accordions</h1>
       <Acordion />
