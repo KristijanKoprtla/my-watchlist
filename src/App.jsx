@@ -19,10 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/search" element={<Search />} />
           </Routes>
           
-          
-          {/* <Search /> */}
         </main>
 
         <Footer />

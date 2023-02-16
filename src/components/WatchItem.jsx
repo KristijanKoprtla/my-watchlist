@@ -1,9 +1,19 @@
 import '../styles/watch-item.scss';
 import propTypes from 'prop-types';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const WatchItem = ({movieObject, showRating}) => {
     const [isFavorite, setIsFavorite] = useState(movieObject.isFavorite);
+
+    //u alert modu ispisati poruku o dodavanju/micanju iz favorita
+
+    // useEffect(() => {
+    //     alert('Promjenio si favorita')
+    // },[isFavorite])
+    // ovo iznad je nije dobar primjer
+
+
     
     return (
         <div className="item-wrap">
@@ -27,7 +37,7 @@ const WatchItem = ({movieObject, showRating}) => {
                 >
                     {
                         isFavorite ?
-                            '💙'
+                            '💜'
                             :
                             '♡'
                     }
