@@ -1,24 +1,46 @@
-import '../styles/watch-item.scss'
-import movies from "../data/movies.json";
-import propTypes from "prop-types";
+import '../styles/watch-item.scss';
+import propTypes from 'prop-types';
 import { useState } from 'react';
 
-function Watchitem({movieObject, rating}) {
-  
-  const [isFavorite, setIsFavorite] = (useState(movieObject.isFavorite))
-  return (
-    <article>
-      <img src={movieObject.imagePath} alt={movieObject.title} />
-      <h3>{movieObject.title}</h3>
-      <h6>{movieObject.movieRating}</h6>
-      <button onClick={() => setIsFavorite(!isFavorite)}>
-        {isFavorite ? "Makni iz favorita" : "Dodaj u favorite"}
-      </button >
-     {rating && <button onClick={() => rating(movieObject.title, movieObject.rating)}>
-        Prikazi rating filma
-      </button>}
-    </article>
-  );
+const WatchItem = ({movieObject, showRating}) => {
+    const [isFavorite, setIsFavorite] = useState(movieObject.isFavorite);
+    
+    return (
+        <div className="item-wrap">
+            <article className='watch-item'>
+                <div className="img-wrap" style={{fontSize: '24px', backgroundImage: `url(${movieObject.imagePath})`}}>
+                    {/* <img
+                        src={movieObject.imagePath}
+                        alt={movieObject.title}
+                    />      */}               
+                </div>
+
+                <h3>{movieObject.title}</h3>
+
+                {
+                    showRating && <button>Show rating</button>
+                }
+
+                <button
+                    onClick={() => setIsFavorite(!isFavorite)}
+                    className='favorite-button'
+                >
+                    {
+                        isFavorite ?
+                            '💙'
+                            :
+                            '♡'
+                    }
+                </button>
+            </article>            
+        </div>
+
+    )
 }
 
-export default Watchitem;
+export default WatchItem;
+
+
+WatchItem.propTypes = {
+    movieObject: propTypes.object
+}

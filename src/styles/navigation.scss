@@ -19,6 +19,10 @@
             a {
                 color: #929292;
                 text-decoration: none;
+
+                &.active {
+                    color: #27295A;
+                }
             }
 
             &:not(:last-child) {
