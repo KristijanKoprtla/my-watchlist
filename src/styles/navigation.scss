@@ -1,0 +1,39 @@
+.main-nav {
+    display: flex;
+    justify-content: center;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        font-size: 18px;
+        border-bottom: 2px solid black;
+        list-style-type: none;
+        
+        li {
+            padding: 36px;
+            position: relative;
+            
+            a {
+                color: #929292;
+                text-decoration: none;
+            }
+
+            &:not(:last-child) {
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 1px;
+                    height: 24px;
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: #C4C4C4;
+                }
+            }
+        }
+    }
+}

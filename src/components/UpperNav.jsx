@@ -1,5 +1,8 @@
+import '../styles/upper-nav.scss';
+
+
 function UpperNav() {
-    const logo = <div>MY WATCHLIST</div>
+    const logo = <div className='logo'>MY WATCHLIST</div>
     
     return(
         <>

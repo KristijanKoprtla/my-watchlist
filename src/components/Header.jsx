@@ -1,3 +1,4 @@
+import '../styles/header.scss';
 import UpperNav from "./UpperNav";
 import Navigation from "./Navigation";
 

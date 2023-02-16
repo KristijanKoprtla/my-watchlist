@@ -1,10 +1,15 @@
 import "./App.css";
 
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Landing from "./components/Landing";
+import Favorites from "./components/Favorites";
+import Search from "./components/Search";
 import Footer from "./components/Footer";
 
 import Playground from './playground/Playground';
+import {
+  BrowserRouter as Router, Routes, Route
+} from 'react-router-dom'
 
 
 
@@ -12,11 +17,21 @@ import Playground from './playground/Playground';
 
 function App() {
   return (
+
+    <Router>
     <div className="App">
       <Header />
-      <hr />
-      <Main />
-      <hr />
+      
+      <main>
+        <Routes>
+          <Route path="/" element= {<Landing />} />
+          <Route path="/favorites" element= {<Favorites />} />
+        </Routes>
+        <Landing />
+        <Favorites />
+        <Search />
+      </main>
+      
       <Footer />  
 
       
@@ -24,6 +39,8 @@ function App() {
       {/* <Playground /> */}
  
     </div>
+    
+    </Router>
   );
 }
 

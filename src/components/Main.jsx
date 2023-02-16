@@ -11,13 +11,9 @@ function Main() {
       {movies.map((movie) => {
         return (
           <Watchitem
-            key={movie.id}
+            movieObject={movie}
             id={movie.id}
-            title={movie.title}
-            year={movie.year}
-            isFavorite={movie.isFavorite}
-            imagePath={movie.imagePath}
-            movieRating={movie.rating}
+            
             rating={showMovieRating}
           />
         );
