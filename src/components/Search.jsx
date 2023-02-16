@@ -42,6 +42,7 @@ const Search = () => {
                     <WatchItem
                         movieObject={helperObject}
                         key={movieItem.imdbID}
+                        isSearchResult='true'
                         
                     />
                 )
