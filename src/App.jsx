@@ -20,9 +20,9 @@ function App() {
             <Route path="/" element={<Landing />} />
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
-          <Landing />
-          <Favorites />
-          <Search />
+          
+          
+          {/* <Search /> */}
         </main>
 
         <Footer />

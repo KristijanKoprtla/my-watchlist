@@ -22,7 +22,7 @@ const Landing = () => {
                     return (
                         <Watchitem 
                             movieObject={movie}
-                            id={movie.id}
+                            key={movie.id}
 
                             rating={showMovieRating}
                         />
