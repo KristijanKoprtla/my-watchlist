@@ -13,27 +13,28 @@ const Favorites = () => {
     padding: "54px 0",
   };
 
-  const filteredMovies = movies.filter((movie) => movie.isFavorite);
+  const [localMovies, setLocalMovies] = useState(JSON.parse(localStorage.getItem('movies')) || []);
+  const filteredMovies = localMovies.filter(movie => movie.isFavorite);
 
-  const [number, setNumber] = useState(0);
+  // const [number, setNumber] = useState(0);
 
-  useEffect(() => {
-    console.log("component Favorites mounted");
+  // useEffect(() => {
+  //   console.log("component Favorites mounted");
 
-    return () => console.log("component die");
-  }, []);
+  //   return () => console.log("component die");
+  // }, []);
 
-  useEffect(() => {
-    console.log('number changed');
-  }, [number])
+  // useEffect(() => {
+  //   console.log('number changed');
+  // }, [number])
 
   return (
     <div style={moviesWrap}>
-      <button onClick={() => setNumber(number +1)}>increase</button>
-      <h1>{number}</h1>
+      {/* <button onClick={() => setNumber(number +1)}>increase</button>
+      <h1>{number}</h1> */}
 
       {filteredMovies.map((movie) => {
-        return <WatchItem movieObject={movie} key={movie.id} />;
+        return <WatchItem movieObject={movie} key={movie.id} setLocalMovies={setLocalMovies} />;
       })}
     </div>
   );

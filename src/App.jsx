@@ -8,21 +8,27 @@ import Footer from "./components/Footer";
 
 import Playground from "./playground/Playground";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createContext } from "react";
+import { useState } from "react";
+
+export const NotificationContext = createContext(0);
 
 function App() {
+  const [notification, setNotification] = useState(false);
+
   return (
     <Router>
       <div className="App">
-        <Header />
-
-        <main>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/search" element={<Search />} />
-          </Routes>
-          
-        </main>
+        <NotificationContext.Provider value={{notification, setNotification}}>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/search" element={<Search />} />
+            </Routes>
+          </main>
+        </NotificationContext.Provider>
 
         <Footer />
 

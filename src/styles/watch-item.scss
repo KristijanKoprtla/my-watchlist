@@ -15,6 +15,7 @@
 
         h3 {
             text-align: center;
+            padding-bottom: 30px;
         }
 
         .img-wrap {
@@ -26,6 +27,15 @@
             position: absolute;
             top: 4px;
             right: 5px;
+        }
+
+        .addMovie-button {
+            position: absolute;
+            bottom: 10px;
+            left: 30%;
+            background: linear-gradient(90deg, #202250 0%, #33366B 50.52%, #404496 100%);
+            color: #fff;
+            
         }
     }
 }

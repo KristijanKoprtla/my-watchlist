@@ -1,12 +1,14 @@
 
 import Watchitem from './WatchItem';
-import movies from '../data/movies.json';
+// import movies from '../data/movies.json';
+import { useState } from 'react';
 
 const Landing = () => {
-    const showMovieRating = (title, rating) => {
-        alert(`Rating filma ${title} ${rating}`);
+    const [localMovies, setLocalMovies] = useState(JSON.parse(localStorage.getItem('movies')) || [])
 
-    };
+    
+
+    
     const moviesWrap = {
         display: 'flex',
         flexWrap: 'wrap',
@@ -18,13 +20,14 @@ const Landing = () => {
     return ( 
         <div style={moviesWrap}>
             {
-                movies.map((movie) => {
+                localMovies.map((movie) => {
                     return (
                         <Watchitem 
                             movieObject={movie}
                             key={movie.id}
-
-                            rating={showMovieRating}
+                            isLandingItem={true}
+                            setLocalMovies={setLocalMovies}
+                            
                         />
                     )
                 })
